@@ -23,7 +23,7 @@ class ReservationController
         $monday = $target->copy()->startOfWeek(Carbon::MONDAY);
         $sunday = $monday->copy()->addDays(6);
 
-        $staffList = Staff::scopeActive()->get();
+        $staffList = Staff::active()->get();
         $weekDays = [];
         for ($i = 0; $i < 7; $i++) {
             $weekDays[] = $monday->copy()->addDays($i);

@@ -410,6 +410,836 @@ a:hover {
     border-radius: 8px;
 }
 
+     /* フローページ固有のスタイル */
+ body {
+     background: linear-gradient(180deg, #f0f8fc 0%, #e5f3fa 100%) !important;
+     font-family: 'Noto Sans JP', sans-serif !important;
+     color: #555 !important;
+     font-size: 14px !important;
+     line-height: 1.8 !important;
+ }
+
+.container {
+    max-width: 800px !important;
+}
+
+/* フロー専用のページタイトル */
+.page-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #7ab8d6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.snowflake {
+    color: #9ed0e8;
+}
+
+/* ステップ */
+.step {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.step-badge-container {
+    width: 100px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.step-line {
+    width: 1px;
+    flex-grow: 1;
+    border-left: 1px dashed #b5d9eb;
+}
+
+.step-badge {
+    width: 90px;
+    height: 60px;
+    border: 2px solid #9ed0e8;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    position: relative;
+}
+
+.step-badge::after {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    border: 1px solid #c5e4f2;
+    border-radius: 50%;
+}
+
+.step-number {
+    font-size: 10px;
+    color: #9ed0e8;
+    letter-spacing: 0.05em;
+}
+
+.step-title {
+    font-size: 14px;
+    color: #7ab8d6;
+    font-weight: 500;
+}
+
+.step-content {
+    flex: 1;
+    padding-top: 10px;
+}
+
+/* テキストスタイル */
+.text-blue {
+    color: #7ab8d6;
+}
+
+.text-small {
+    font-size: 12px;
+    color: #888;
+}
+
+a {
+    color: #7ab8d6;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ボタン */
+.btn {
+    display: inline-block;
+    padding: 10px 24px;
+    border-radius: 25px;
+    font-size: 13px;
+    text-decoration: none;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.btn-primary {
+    background: #8dc9e5;
+    color: #fff;
+}
+
+.btn-secondary {
+    background: #fff;
+    color: #7ab8d6;
+    border: 1px solid #9ed0e8;
+}
+
+/* セクションタイトル */
+.section-title {
+    text-align: center;
+    margin: 30px 0 20px;
+    padding: 15px;
+    background: linear-gradient(90deg, transparent 0%, #e5f3fa 50%, transparent 100%);
+}
+
+.section-title h3 {
+    font-size: 16px;
+    font-weight: 400;
+    color: #7ab8d6;
+}
+
+.section-title p {
+    font-size: 12px;
+    color: #888;
+    margin-top: 5px;
+}
+
+/* サブセクション */
+.sub-section {
+    background: #f5fafc;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.sub-section-title {
+    display: inline-block;
+    background: #9ed0e8;
+    color: #fff;
+    padding: 4px 16px;
+    border-radius: 15px;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+/* 画像グリッド */
+.image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.image-grid img {
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.image-grid.grid-6 img {
+    width: 100px;
+    height: 75px;
+}
+
+.image-grid.grid-2 img {
+    width: 140px;
+    height: 100px;
+}
+
+.image-grid.grid-3 img {
+    width: 120px;
+    height: 90px;
+}
+
+.image-grid.grid-8 img {
+    width: 90px;
+    height: 70px;
+}
+
+.image-grid.grid-4 img {
+    width: 130px;
+    height: 100px;
+}
+
+.image-grid.grid-1 img {
+    width: 150px;
+    height: 110px;
+}
+
+/* 下向き矢印 */
+.arrow-down {
+    text-align: center;
+    margin: 10px 0;
+    color: #b5d9eb;
+    font-size: 20px;
+}
+
+/* リンクセクション */
+.link-section {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.link-section a {
+    color: #7ab8d6;
+    font-size: 13px;
+}
+
+/* 注意書き */
+.note {
+    font-size: 12px;
+    color: #888;
+    margin-top: 10px;
+}
+
+.note-box {
+    background: #f5fafc;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 13px;
+    line-height: 2;
+}
+
+/* プレースホルダー画像 */
+.placeholder-img {
+    background: linear-gradient(135deg, #e8f4f9 0%, #d4e9f2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9ed0e8;
+    font-size: 24px;
+    border-radius: 8px;
+}
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+body {
+    font-family: Sawarabi Gothic,sans-serif;
+    line-height: 1.6;
+    color: #3c4c80;
+    background-color: #f1f1f1;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ヘッダー */
+header {
+    background-color: #797a7e;
+    height: 80px;
+    padding: 16px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Zen Maru Gothic', sans-serif;
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    font-weight: 700;
+}
+.line-reservation {
+    margin: 0 6px 0 0;
+    background-color: #fff;
+}
+.line-reservation-section{
+    color: #797a7e;
+    padding: 8px 16px;
+    border-radius: 24px;
+    display: flex;
+}
+.mail-reservation {
+    background-color: #fff;
+}
+.line-reserve a{
+    color: #797a7e;
+    text-decoration: none;
+}
+.header-menu {
+    text-decoration: none;
+    color: #fff;
+}
+.nav-links li {
+    padding-top: 8px;
+}
+
+.nav-links a {
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    opacity: 0.6;
+}
+.line-reserve:hover,
+.line-reserve:hover a {
+    transition: all 0.3s ease;
+    background-color: #797a7e;
+    color: #fff;
+    opacity: 1;
+}
+
+/* メインコンテンツ */
+.main-content {
+    min-height: calc(100vh - 200px);
+}
+
+.section-reservation {
+    padding: 24px;
+}
+
+.page-title {
+    font-size: 32px;
+    color: #797a7e;
+    margin-bottom: 10px;
+}
+.title-border {
+    width: 8rem;
+    height: 2px;
+    background: #212121;
+    display: flex;
+}
+
+.page-subtitle {
+    color: #7f8c8d;
+    font-size: 16px;
+}
+
+.calendar-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 30px;
+}
+.calendar-before-button {
+    background-color: #97b7d6;
+    color: white;
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1.25rem;
+    transition: 0.3s;"
+}
+.calendar-after-button {
+    background-color: #97b7d6;
+    color: white;
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1.25rem;
+    transition: 0.3s;"
+}
+
+.nav-btn:hover {
+    background: #d35400;
+    transform: translateY(-2px);
+}
+
+.current-month {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c3e50;
+    min-width: 200px;
+    text-align: center;
+}
+.calendar-target-month {
+    background-color: #97b7d6;
+    padding: 1rem 2.5rem;
+    border-radius: 100px;
+    font-weight: 700;
+    color: #fff;
+    font-size: 1.25rem;"
+}
+
+/* カレンダーテーブル */
+.calendar-container {
+    background: #fff;
+    overflow: hidden;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    background: linear-gradient(135deg, rgb(249, 250, 251), rgb(243, 244, 246));
+    border-radius: 16px;
+    padding: 1.5rem;
+    overflow-x: auto;
+}
+.calender-container {
+    overflow-x: auto;
+    border-radius: 12px;
+    border: 1px solid rgb(226, 232, 240);
+}
+
+.calendar-table {
+    width: 100%;
+    border-spacing: 8px;
+    border-collapse: collapse;
+    min-width: 800px;
+}
+
+.calendar-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.calendar-header th {
+    padding: 20px 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.time-header {
+    width: 100px;
+    background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+}
+
+.date-header {
+    padding: 1rem 0.75rem;
+    background: rgb(151, 183, 214);
+    color: white;
+    font-weight: 600;
+    font-size: 0.85rem;
+    position: sticky;
+    left: 0px;
+    z-index: 2;
+    width: 80px;
+}
+.date-header-date {
+    padding: 1rem 0.5rem;
+    background: rgb(151, 183, 214);
+    color: white;
+    font-weight: 600;
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+
+.calendar-body tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+.time-cell {
+    font-weight: bold;
+    padding: 1rem;
+    background: white;
+    border-radius: 12px;
+    text-align: center;
+    color: rgb(75, 85, 99);
+}
+
+.availability-cell {
+    border: 1px solid #e0e0e0;
+    position: relative;
+    padding: 1rem;
+    background: linear-gradient(135deg, rgb(209, 250, 229), rgb(167, 243, 208));
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 700;
+    color: rgb(5, 150, 105);
+    cursor: pointer;
+    transition: 0.3s;"
+}
+
+.availability-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 24px;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    margin: 2px auto;
+    display: block;
+}
+
+.available {
+    background: transparent;
+    color: #2ecc71;
+    border: none;
+}
+
+.available:hover {
+    color: #27ae60;
+    transform: scale(1.05);
+}
+
+.unavailable {
+    background: transparent;
+    color: #e74c3c;
+    border: none;
+    cursor: not-allowed;
+}
+
+/* ユーザー選択セクション */
+.user-selection {
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.user-selection h3 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.user-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.user-btn {
+    background: white;
+    color: #333;
+    border: 1px solid #ddd;
+    padding: 18px 25px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.user-btn:hover {
+    background: #f5f5f5;
+}
+
+.user-name {
+    font-size: 16px;
+}
+
+.user-selection-desc {
+    color: #7f8c8d;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* 凡例 */
+.legend {
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.legend-items {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.legend-items span {
+    font-size: 16px;
+    color: #2c3e50;
+}
+.line-icon {
+    width: 32px;
+    vertical-align: middle;
+}
+
+/* LINE予約ボタン（ヘッダー用） */
+.line-reservation-btn {
+    background: linear-gradient(135deg, #00b900, #00a000);
+    color: white;
+    display: ruby-text;
+    padding: 18px 40px;
+    border-radius: 30px;
+    border: 2px solid transparent;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 185, 0, 0.3);
+}
+
+.line-reservation-btn:hover {
+    background: linear-gradient(135deg, #009900, #008800);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 185, 0, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-info {
+    clear: both;
+    float: left;
+    width: 40%;
+    height: auto;
+    margin: 0;
+    padding: 0 2% 0 0;
+    text-align: left;
+}
+
+.footer-map {
+    float: right;
+    width: 50%;
+    margin: 0;
+    padding: 5px;
+    background: #fff;
+}
+.footer-map img {
+    max-width: 100%;
+}
+.entry-title {
+    clear: both;
+    width: 100%;
+    height: auto;
+    margin: 0 0 30px;
+    padding: 10px 0 10px 8%;
+    text-align: left;
+    font-size: 40px;
+    color: #81a1c0;
+    line-height: 120%;
+    font-weight: normal;
+    border-bottom: 1px solid #81a1c0;
+}
+.wrapper {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 40px;
+    background-color: #fff;
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+    .calendar-container {
+        overflow-x: auto;
+    }
+
+    .calendar-table {
+        min-width: 600px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .calendar-nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .legend-items {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .user-buttons {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .user-btn {
+        padding: 15px 20px;
+        font-size: 14px;
+    }
+}
+
+/* フッター */
+footer {
+    background-color: #797a7e;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 50px 3% 30px;
+    margin-top: 40px;
+    height: 400px;
+}
+.include-tax {
+    color: #232323;
+}
+.course-title {
+    clear: both;
+    width: 100%;
+    height: auto;
+    margin: 30px 0 30px;
+    padding: 10px 2%;
+    text-align: left;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 100%;
+    background: #97b7d6;
+    color: #fff;
+}
+.course-menu {
+    margin: 0 auto;
+    border-bottom: 1px dashed #81a1c0;
+}
+.course-menu img {
+    display: block;
+    margin: 0 auto;
+}
+.course-menu-title {
+    text-align: center;
+    color: #232323;
+    font-size: 24px;
+}
+#price-taiju {
+    clear: both;
+    float: left;
+    width: 100%;
+    height: auto;
+    margin: 0 0 30px;
+    padding: 20px 5%;
+    border: 1px solid #81a1c0;
+}
+#price-taiju ul {
+    clear: both;
+    float: left;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+#price-taiju ul li {
+    float: left;
+    width: auto;
+    text-align: left;
+    margin: 0 3% 15px 0;
+    padding: 0;
+    line-height: 100%;
+    list-style-type: disc;
+    list-style-position: inside;
+}
+:marker {
+    unicode-bidi: isolate;
+    font-variant-numeric: tabular-nums;
+    text-transform: none;
+    text-indent: 0px !important;
+    text-align: start !important;
+    text-align-last: auto !important;
+}
+.line-note {
+    display: block;
+}
+#option-wrapper {
+    clear: both;
+    float: left;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.option img {
+    max-width: 100%;
+    margin: 0 0 25px;
+    z-index: 1;
+}
+.option {
+    width: 31.3%;
+    height: auto;
+    margin: 0 2% 50px 0;
+    padding: 25px 3% 5px;
+    border: 1px solid #97b7d6;
+    position: relative;
+}
+.option img.op-ribon {
+    float: left;
+    max-width: 35%;
+    top: 0;
+    left: 0;
+    margin: 0;
+    z-index: 888;
+    position: absolute;
+}
+.reservation-wrapper {
+    display: flex;
+}
+p {
+    display: inline;
+}
+
 /* レスポンシブ */
 @media (max-width: 768px) {
     .nav-links {

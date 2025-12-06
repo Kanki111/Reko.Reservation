@@ -1,0 +1,774 @@
+/* reservation.css - 予約ページ専用CSS */
+
+body {
+    font-family: Sawarabi Gothic, sans-serif;
+    color: #3c4c80;
+    background-color: #f1f1f1;
+}
+
+.section-reservation {
+    padding: 24px;
+}
+
+.page-title {
+    font-size: 32px;
+    color: #797a7e;
+    margin-bottom: 10px;
+}
+
+.title-border {
+    width: 8rem;
+    height: 2px;
+    background: #212121;
+    display: flex;
+}
+
+.page-subtitle {
+    color: #7f8c8d;
+    font-size: 16px;
+}
+
+.calendar-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 30px;
+}
+
+.calendar-before-button {
+    background-color: #97b7d6;
+    color: white;
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1.25rem;
+    transition: 0.3s;
+}
+
+.calendar-after-button {
+    background-color: #97b7d6;
+    color: white;
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1.25rem;
+    transition: 0.3s;
+}
+
+
+.current-month {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c3e50;
+    min-width: 200px;
+    text-align: center;
+}
+
+.calendar-target-month {
+    background-color: #97b7d6;
+    padding: 1rem 2.5rem;
+    border-radius: 100px;
+    font-weight: 700;
+    color: #fff;
+    font-size: 1.25rem;
+}
+
+/* カレンダーテーブル */
+.calendar-container {
+    background: #fff;
+    overflow: hidden;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    background: linear-gradient(135deg, rgb(249, 250, 251), rgb(243, 244, 246));
+    border-radius: 16px;
+    padding: 1.5rem;
+    overflow-x: auto;
+}
+
+.calender-container {
+    overflow-x: auto;
+    border-radius: 12px;
+    border: 1px solid rgb(226, 232, 240);
+}
+
+.calendar-table {
+    width: 100%;
+    border-spacing: 8px;
+    border-collapse: collapse;
+    min-width: 800px;
+}
+
+.calendar-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.calendar-header th {
+    padding: 20px 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.time-header {
+    width: 100px;
+    background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+}
+
+.date-header {
+    padding: 1rem 0.75rem;
+    background: rgb(151, 183, 214);
+    color: white;
+    font-weight: 600;
+    font-size: 0.85rem;
+    position: sticky;
+    left: 0px;
+    z-index: 2;
+    width: 80px;
+}
+
+.date-header-date {
+    padding: 1rem 0.5rem;
+    background: rgb(151, 183, 214);
+    color: white;
+    font-weight: 600;
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+
+.calendar-body tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+.time-cell {
+    font-weight: bold;
+    padding: 1rem;
+    background: white;
+    border-radius: 12px;
+    text-align: center;
+    color: rgb(75, 85, 99);
+}
+
+.availability-cell {
+    border: 1px solid #e0e0e0;
+    position: relative;
+    padding: 1rem;
+    background: linear-gradient(135deg, rgb(209, 250, 229), rgb(167, 243, 208));
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 700;
+    color: rgb(5, 150, 105);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.availability-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 24px;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    margin: 2px auto;
+    display: block;
+}
+
+.available {
+    background: transparent;
+    color: #2ecc71;
+    border: none;
+}
+
+
+.unavailable {
+    background: transparent;
+    color: #e74c3c;
+    border: none;
+    cursor: not-allowed;
+}
+
+/* ユーザー選択セクション */
+.user-selection {
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.user-selection h3 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.user-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.user-btn {
+    background: white;
+    color: #333;
+    border: 1px solid #ddd;
+    padding: 18px 25px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+
+.user-name {
+    font-size: 16px;
+}
+
+.user-selection-desc {
+    color: #7f8c8d;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* 凡例 */
+.legend {
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.legend-items {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.legend-items span {
+    font-size: 16px;
+    color: #2c3e50;
+}
+
+/* LINE予約セクション */
+.line-reservation-section {
+    margin: 20px 0;
+}
+
+.reservation-wrapper {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.line-reservation {
+    flex: 1;
+    min-width: 300px;
+}
+
+.mail-reservation {
+    flex: 1;
+    min-width: 300px;
+}
+
+.line-note {
+    display: block;
+    margin-top: 10px;
+    color: #666;
+    font-size: 14px;
+}
+
+.line-guide {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+.line-guide h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.line-guide-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.line-guide-step {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.line-guide-step .step-number {
+    background: #97b7d6;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.line-guide-step .step-text {
+    font-size: 14px;
+}
+
+/* メニュー関連 */
+.wrapper {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 16px;
+    background-color: #fff;
+}
+
+/* メニューセクション */
+.menu-section {
+    margin: 3rem 0;
+}
+
+.menu-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.menu-title {
+    font-size: 2rem;
+    color: rgb(90, 138, 181);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.menu-subtitle {
+    color: rgb(113, 128, 150);
+    font-size: 0.9rem;
+}
+
+.menu-category {
+    margin-bottom: 2.5rem;
+}
+
+.category-title {
+    background: rgb(151, 183, 214);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+/* コースカード */
+.course-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.course-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgb(226, 232, 240);
+}
+
+.course-card-header {
+    background: linear-gradient(135deg, rgb(232, 241, 248), rgb(220, 234, 245));
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid rgb(226, 232, 240);
+}
+
+.course-name {
+    color: rgb(90, 138, 181);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.course-card-body {
+    padding: 1.5rem;
+}
+
+.price-list {
+    margin-bottom: 1rem;
+}
+
+.price-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed rgb(226, 232, 240);
+}
+
+.price-item:last-child {
+    border-bottom: none;
+}
+
+.price-label {
+    color: rgb(45, 55, 72);
+    font-weight: 500;
+}
+
+.price-value {
+    color: rgb(90, 138, 181);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.course-description {
+    color: rgb(113, 128, 150);
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+}
+
+.course-note {
+    color: rgb(160, 174, 192);
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+/* 追加料金セクション */
+.price-info-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.price-info-card {
+    background: rgb(247, 250, 252);
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid rgb(226, 232, 240);
+}
+
+.price-info-title {
+    color: rgb(45, 55, 72);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.price-info-desc {
+    color: rgb(113, 128, 150);
+    font-size: 0.8rem;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+}
+
+.price-info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.price-info-list li {
+    color: rgb(74, 85, 104);
+    font-size: 0.85rem;
+    padding: 0.4rem 0;
+    border-bottom: 1px dashed rgb(226, 232, 240);
+}
+
+.price-info-list li:last-child {
+    border-bottom: none;
+}
+
+.highlight-price {
+    color: rgb(90, 138, 181);
+    font-weight: 700;
+}
+
+.menu-notes {
+    background: rgb(255, 250, 240);
+    border-left: 4px solid rgb(237, 137, 54);
+    padding: 1rem 1.25rem;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 2rem;
+}
+
+.menu-notes p {
+    color: rgb(116, 94, 66);
+    font-size: 0.85rem;
+    margin: 0.25rem 0;
+    display: block;
+}
+
+/* オプションカード */
+.option-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.option-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgb(226, 232, 240);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+
+.option-image {
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.option-image img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s;
+}
+
+
+.option-name {
+    color: rgb(45, 55, 72);
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.option-price {
+    color: rgb(90, 138, 181);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.option-price-sub {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: rgb(113, 128, 150);
+}
+
+.option-price-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.option-price-list span {
+    background: rgb(232, 241, 248);
+    color: rgb(90, 138, 181);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.option-description {
+    color: rgb(113, 128, 150);
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+p {
+    display: inline;
+}
+
+/* 新カレンダーテーブル */
+.calendar-table-container {
+    overflow-x: auto;
+    border-radius: 12px;
+    border: 1px solid rgb(226, 232, 240);
+}
+
+.calendar-table-new {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+}
+
+.time-header-new {
+    padding: 1rem 0.75rem;
+    background: rgb(151, 183, 214);
+    color: white;
+    font-weight: 600;
+    font-size: 0.85rem;
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    width: 80px;
+}
+
+.date-header-new {
+    padding: 1rem 0.5rem;
+    background: rgb(151, 183, 214);
+    color: white;
+    font-weight: 600;
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+
+.date-header-new.weekend {
+    background: rgb(106, 155, 194);
+}
+
+.time-cell-new {
+    padding: 0.5rem 0.75rem;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: rgb(45, 55, 72);
+    border-right: 1px solid rgb(226, 232, 240);
+    position: sticky;
+    left: 0;
+    background: rgb(255, 255, 255);
+    z-index: 1;
+}
+
+.time-cell-new.row-even {
+    background: rgb(247, 250, 252);
+}
+
+.row-even {
+    background: rgb(247, 250, 252);
+}
+
+.slot-cell {
+    padding: 0.4rem;
+    text-align: center;
+    border-right: 1px solid rgb(226, 232, 240);
+}
+
+.slot-cell:last-child {
+    border-right: none;
+}
+
+.slot-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 32px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: 0.15s;
+}
+
+.available-badge {
+    background: rgb(240, 255, 244);
+    color: rgb(72, 187, 120);
+    border: 1px solid rgb(154, 230, 180);
+    cursor: pointer;
+}
+
+
+.unavailable-badge {
+    background: rgb(255, 245, 245);
+    color: rgb(245, 101, 101);
+    border: 1px solid rgb(254, 178, 178);
+    cursor: default;
+}
+
+.selected-badge {
+    background: rgb(90, 138, 181);
+    color: white;
+    border: none;
+}
+
+/* カレンダー凡例 */
+.calendar-legend {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: rgb(247, 250, 252);
+    border-radius: 12px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.legend-badge {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.legend-badge.selected-badge {
+    font-size: 0.75rem;
+}
+
+.legend-item span {
+    color: rgb(113, 128, 150);
+    font-size: 0.9rem;
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+    .calendar-container {
+        overflow-x: auto;
+    }
+
+    .calendar-table {
+        min-width: 600px;
+    }
+
+    .calendar-nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .legend-items {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .user-buttons {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .user-btn {
+        padding: 15px 20px;
+        font-size: 14px;
+    }
+
+    .wrapper {
+        width: 95%;
+    }
+
+    #option-wrapper {
+        flex-direction: column;
+    }
+
+    .option {
+        width: 100%;
+    }
+}
