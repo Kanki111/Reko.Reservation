@@ -1,0 +1,57 @@
+# ===========================================
+# Docker ビルド時に除外するファイル
+# ===========================================
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# 開発環境
+.env
+.env.local
+.env.*.local
+docker-compose.yml
+docker-compose.override.yml
+
+# IDE
+.idea
+.vscode
+*.swp
+*.swo
+.DS_Store
+
+# ログ・キャッシュ（ビルド時に不要）
+storage/logs/*
+storage/framework/cache/*
+storage/framework/sessions/*
+storage/framework/views/*
+bootstrap/cache/*
+!storage/logs/.gitignore
+!storage/framework/cache/.gitignore
+!storage/framework/sessions/.gitignore
+!storage/framework/views/.gitignore
+!bootstrap/cache/.gitignore
+
+# テスト
+tests
+phpunit.xml
+.phpunit.result.cache
+
+# Node.js（使用している場合）
+node_modules
+npm-debug.log
+
+# ドキュメント
+docs
+*.md
+!README.md
+
+# vendor（Composerステージでインストールするため）
+vendor
+
+# その他
+.editorconfig
+.styleci.yml
+Homestead.json
+Homestead.yaml

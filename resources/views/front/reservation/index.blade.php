@@ -270,14 +270,19 @@
             </button>
         </div>
 
-        <!-- ユーザー選択セクション -->
-        <div class="user-selection">
+        <!-- スタッフ選択セクション -->
+        <div id="calendar" class="user-selection">
             <h3>👥 スタッフ別スケジュール確認</h3>
             <div style="display: flex; gap: 1rem; margin-bottom: 2rem; justify-content: center; flex-wrap: wrap;">
                 @if(isset($staffList))
                     @foreach($staffList as $staffMember)
-                        <button style="background: white; color: rgb(107, 114, 128); border: 2px solid rgb(229, 231, 235); padding: 1rem 2rem; border-radius: 100px; cursor: pointer; font-size: 1rem; font-weight: 600; display: flex; align-items: center; gap: 0.75rem; transition: 0.3s; box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 8px;" onclick="showUserSchedule('{{ $staffMember->name }}')">
-                                <span class="user-name">{{ $staffMember->name }}</span>
+                        @php
+                            $isSelected = $selectStaff == $staffMember->id;
+                        @endphp
+                        <button
+                            style="background: {{ $isSelected ? 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' : 'white' }}; color: {{ $isSelected ? 'white' : 'rgb(107, 114, 128)' }}; border: 2px solid {{ $isSelected ? 'transparent' : 'rgb(229, 231, 235)' }}; padding: 1rem 2rem; border-radius: 100px; cursor: pointer; font-size: 1rem; font-weight: 600; display: flex; align-items: center; gap: 0.75rem; transition: 0.3s; box-shadow: {{ $isSelected ? 'rgba(102, 126, 234, 0.4) 0px 4px 15px' : 'rgba(0, 0, 0, 0.05) 0px 2px 8px' }};"
+                            onclick="location.href='{{ route('reservation.index', ['staff' => $staffMember->id, 'targetDate' => $targetDate]) }}#calendar'">
+                            <span class="user-name">{{ $staffMember->name }}</span>
                         </button>
                     @endforeach
                 @endif
@@ -342,11 +347,13 @@
                             @for($i = 0; $i < 7; $i++)
                                 @php
                                     $date = $monday->copy()->addDays($i);
-                                    $isAvailable = rand(0, 10) > 3; // ランダムで空き状況を決定（実際は予約データベースから取得）
+                                    $dateKey = $date->format('Y-m-d');
+                                    // bookedSlotsに該当日時があれば予約済み（×）
+                                    $isBooked = isset($bookedSlots[$dateKey]) && in_array($timeDisplay, $bookedSlots[$dateKey]);
                                 @endphp
                                 <td class="slot-cell">
-                                    @if($isAvailable)
-                                        <div class="slot-badge available-badge" onclick="selectSlot('全員対応', '{{ $timeKey }}', '{{ $date->format('Y-m-d') }}')">○</div>
+                                    @if(!$isBooked)
+                                        <div class="slot-badge available-badge" onclick="selectSlot('{{ $selectStaff }}', '{{ $timeDisplay }}', '{{ $dateKey }}')">○</div>
                                     @else
                                         <div class="slot-badge unavailable-badge">×</div>
                                     @endif
