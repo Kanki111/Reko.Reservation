@@ -42,6 +42,8 @@ services:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_USER: laravel
       MYSQL_PASSWORD: laravel
+      TZ: Asia/Tokyo
+    command: --default-time-zone=Asia/Tokyo
     volumes:
       - dbdata:/var/lib/mysql
     ports:
